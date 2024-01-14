@@ -401,6 +401,21 @@ output_element.style.visibility = 'visible';
 output_element.textContent = msg; 
 }
 }
+function clipboard()
+{
+    var output_element = document.getElementById('outputtext');
+    var textToCopy = output_element.textContent;
+    var textarea = document.createElement('textarea');
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+
+    alert('Text copied to clipboard: ' + textToCopy);
+
+}
     </script>
 
 </head>
@@ -533,7 +548,7 @@ output_element.textContent = msg;
     </div>
 
  <textarea id="outputtext" class="output" >{{ result }} </textarea>
-
+ <button style="width: 60px; height: 20px; margin-left: 50%;" onclick="clipboard()"> Copy </button>
     </div>
 
     
