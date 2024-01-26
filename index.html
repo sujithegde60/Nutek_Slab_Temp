@@ -103,8 +103,8 @@ background-color:beige;
             moment=Math.max((((load+(width*thk*length*2.5*Math.pow(10, -9)))*10*FOS*(width-bearing))/4000),0)
             
             d=thk-cc-(dia/2)
-            beff=Math.min(length,300+(2.4*(width/2)*0.5)); //reference AS3600:2018 cl 9.6, assuming the laod is at midspan
-            
+            //beff=Math.min(length,300+(2.4*(width/2)*0.5)); //reference AS3600:2018 cl 9.6, assuming the laod is at midspan
+            beff=Math.min(length,2.4*(width/2)*(0.5)+300);//Reference IS 456- 24.3.2
             ratio=(moment*1000000)/(1000*Math.pow(d,2));
 
             if(isNaN(ratio)){return;}
